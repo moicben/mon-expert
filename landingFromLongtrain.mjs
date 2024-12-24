@@ -24,6 +24,10 @@ const promptEnd =
     for (let i = 0; i < pages.length; i += chunkSize) {
       const chunk = pages.slice(i, i + chunkSize);
       for (const page of chunk) {
+        if (page.title) {
+          console.log(`Already exists: ${page.title}`);
+          continue; // Skip pages with an existing title
+        }
         const longtrain = page.longtrain || "Nom du service"; // Utiliser la valeur de longtrain ou une valeur par défaut
         const promptStart = `Pour le nouveau service gratuit de notre plateforme : "${longtrain}", nous avons besoin que tu rédiges : \n`;
   
@@ -51,7 +55,7 @@ const promptEnd =
   
         // Écrire les résultats mis à jour dans le fichier landing.json après chaque page
         fs.writeFileSync(landingPath, JSON.stringify(landingData, null, 2));
-        console.log(`Résultats mis à jour pour "${page.title}" dans landing.json`);
+        console.log(`(${i + chunk.indexOf(page) + 1}/${pages.length})`);
       }
     }
   }
