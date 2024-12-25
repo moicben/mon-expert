@@ -14,13 +14,13 @@ export default function Category({ subcategories = [] }) {
         <title>{category} - Category</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <Header title={`${category} - Category`} />
+      <Header title={`${category} - Category`} />
+      <main className='category'>
+        <h1>{category}</h1>
         <p className="description">
           Contenu pour la catégorie {category}.
         </p>
-        <ul>
+        <ul className='listing'>
           {subcategories.map(subcategory => (
             <li key={subcategory}>
               <a href={`/${category}/${subcategory.toLowerCase().replace(/ /g, '-')}`}>
