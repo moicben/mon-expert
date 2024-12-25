@@ -22,7 +22,9 @@ export default function SubCategory() {
   return (
     <div className="container">
       <Head>
-        <title>{subcategory} - {category}</title>
+        <title>{subcategory} - {category} | Mon Expert</title>
+        <meta name="description" content={`Découvrez des informations et des ressources sur ${subcategory} dans la catégorie ${category}.`} />
+        <meta name="keywords" content={`${subcategory}, ${category}, démarches, juridique`} />
       </Head>
       <Header/>
       <main className='category'>

@@ -11,14 +11,16 @@ export default function Category({ subcategories = [] }) {
   return (
     <div className="container">
       <Head>
-        <title>{category} - Category</title>
+        <title>{category} - Categorie</title>
+        <meta name="description" content={`Découvrez les sous-catégories et les informations pertinentes pour la catégorie ${category}.`} />
+        <meta name="keywords" content={`${category}, sous-catégories, informations, ${category} SEO`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header title={`${category} - Category`} />
       <main className='category'>
         <h1>{category}</h1>
         <p className="description">
-          Contenu pour la catégorie {category}.
+          Découvrez les sous-catégories et les informations pertinentes pour la catégorie {category}.
         </p>
         <ul className='listing'>
           {subcategories.map(subcategory => (
