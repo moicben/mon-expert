@@ -77,8 +77,6 @@
           run: ${{ steps.detect-package-manager.outputs.runner }} next build
         - name: Generate Sitemap
           run: node generateSitemap.mjs
-        - name: Create .nojekyll file
-          run: echo "" > ./out/.nojekyll
         - name: Upload artifact
           uses: actions/upload-pages-artifact@v3
           with:
