@@ -76,7 +76,7 @@
         - name: Build with Next.js
           run: ${{ steps.detect-package-manager.outputs.runner }} next build
         - name: Generate Sitemap
-          run: node ./scripts/generateSitemap.mjs
+          run: node generateSitemap.mjs
         - name: Upload artifact
           uses: actions/upload-pages-artifact@v3
           with:
