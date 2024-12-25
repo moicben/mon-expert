@@ -1,0 +1,30 @@
+.category{
+    padding: 4rem;
+}
+
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 éléments par ligne */
+    gap: 1rem; /* Espace entre les éléments */
+    width: 100%;
+}
+
+.listing li {
+  margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    grid: 2 0 1fr;
+}
+
+.listing li a {
+  text-decoration: none;
+  color: #0070f3;
+  font-weight: bold;
+}
+
+.listing li a:hover {
+  text-decoration: underline;
+}
