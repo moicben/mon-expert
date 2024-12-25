@@ -7,14 +7,17 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Next.js Starter!</title>
+        <title>Mon Expert | Services en ligne pour particuliers</title>
+        <meta name="description" content="Découvrez nos services en ligne pour particuliers, conçus pour répondre à tous vos besoins." />
+        <meta name="keywords" content="services en ligne, particuliers, assistance, support, expertise" />
+        <meta name="author" content="Mon Expert" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Header title="Welcome to my app!" />
+        <Header title="Bienvenue sur Mon Expert!" />
         <p className="description">
-          Get started by exploring the categories below:
+          Commencez par explorer les catégories ci-dessous :
         </p>
         <ul>
           {Object.keys(navigation).map(category => (
