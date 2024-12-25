@@ -1,0 +1,5 @@
+# Ignore Next.js cache
+.next/cache/
+
+# Ignore large files
+node_modules/next/next-swc-fallback/
