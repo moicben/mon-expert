@@ -1,0 +1,43 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem;
+  background-color: #ebeff8;
+  border-top: solid 1px #ccc;
+}
+
+.column {
+  flex: 1;
+  margin: 0 2rem;
+}
+
+.column:first-child {
+    flex: 2; /* Donne plus d'espace à la première colonne */
+  }
+
+footer .logo {
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.column h3 {
+  margin-bottom: 1rem;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.column ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.column ul li a:hover {
+  text-decoration: underline;
+}
