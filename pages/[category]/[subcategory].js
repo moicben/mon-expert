@@ -4,17 +4,9 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import landingData from '../../landing.json';
 
-export default function SubCategory() {
+export default function SubCategory({ filteredLandingPages }) {
   const router = useRouter();
   const { category, subcategory } = router.query;
-
-  // Debugging: Log the landingPages data
-  console.log('category:', category);
-  console.log('subcategory:', subcategory);
-
-  // Filter landing pages by category and subcategory
-  const filteredLandingPages = landingData.pages.filter(page => page.category === category && page.subCategory === subcategory);
-  console.log('filteredLandingPages:', filteredLandingPages);
 
   return (
     <div className="container">
@@ -42,4 +34,19 @@ export default function SubCategory() {
       <Footer />
     </div>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = landingData.pages.map(page => ({
+    params: { category: page.category.toLowerCase(), subcategory: page.subCategory.toLowerCase() }
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const { category, subcategory } = params;
+  const filteredLandingPages = landingData.pages.filter(page => page.category.toLowerCase() === category && page.subCategory.toLowerCase() === subcategory);
+
+  return { props: { filteredLandingPages } };
 }
