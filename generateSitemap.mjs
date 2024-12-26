@@ -30,22 +30,12 @@ function getNavigationUrls() {
     const filePath = path.join(__dirname, 'navigation.json');
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const navigationData = JSON.parse(fileContent);
-    return Object.values(navigationData).flat();
+    return Object.entries(navigationData).map(([category, subcategories]) => ({
+      category,
+      subcategories
+    }));
   } catch (error) {
     console.error('Error loading navigation data:', error);
-    return [];
-  }
-}
-
-// Function to get landing URLs
-function getLandingUrls() {
-  try {
-    const filePath = path.join(__dirname, 'landing.json');
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const landingData = JSON.parse(fileContent);
-    return landingData.urls || [];
-  } catch (error) {
-    console.error('Error loading landing data:', error);
     return [];
   }
 }
@@ -56,29 +46,24 @@ async function generateSitemap() {
 
   // Add static pages
   sitemap.write({ url: '/', changefreq: 'daily', priority: 1.0 });
-  // sitemap.write({ url: '/boutique', changefreq: 'weekly', priority: 0.8 });
-  // sitemap.write({ url: '/mentions-legales', changefreq: 'monthly', priority: 0.5 });
-  // sitemap.write({ url: '/politique-de-confidentialite', changefreq: 'monthly', priority: 0.5 });
-  // sitemap.write({ url: '/conditions-generales', changefreq: 'monthly', priority: 0.5 });
+
+  // Read navigation URLs
+  const navigationUrls = getNavigationUrls();
+
+  // Add category and subcategory pages
+  navigationUrls.forEach(({ category, subcategories }) => {
+    sitemap.write({ url: `/${category.toLowerCase()}`, changefreq: 'weekly', priority: 0.8 });
+    subcategories.forEach(subcategory => {
+      sitemap.write({ url: `/${category.toLowerCase()}/${subcategory.toLowerCase().replace(/ /g, '-')}`, changefreq: 'weekly', priority: 0.7 });
+    });
+  });
 
   // Read landings
   const landings = getLandings();
 
-  // Add dynamic product pages
-  landings.forEach(product => {
-    sitemap.write({ url: `/produits/${product.slug}`, changefreq: 'weekly', priority: 0.7 });
-  });
-
-  // Add navigation URLs
-  const navigationUrls = getNavigationUrls();
-  navigationUrls.forEach(url => {
-    sitemap.write({ url: `/${url}`, changefreq: 'monthly', priority: 0.5 });
-  });
-
-  // Add landing URLs
-  const landingUrls = getLandingUrls();
-  landingUrls.forEach(url => {
-    sitemap.write({ url: `/${url}`, changefreq: 'monthly', priority: 0.5 });
+  // Add landing pages
+  landings.forEach(page => {
+    sitemap.write({ url: `/${page.category.toLowerCase()}/${page.subCategory.toLowerCase().replace(/ /g, '-')}/${page.slug}`, changefreq: 'weekly', priority: 0.6 });
   });
 
   sitemap.end();
