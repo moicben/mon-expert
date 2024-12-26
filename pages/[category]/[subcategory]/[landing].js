@@ -4,7 +4,14 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import landingData from '../../../landing.json';
 
-export default function LandingPage({ content, category, subcategory }) {
+export default function LandingPage({ content }) {
+  const router = useRouter();
+  const { category, subcategory, landing } = router.query;
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="container">
       <Head>
