@@ -65,3 +65,18 @@
   font-weight: bold;
   margin: 2rem 0 1rem 0;
 }
+
+
+@media (max-width:1024px){
+    .hero, .proof{
+        flex-direction: column;
+    }
+    .hero .left, .hero .right{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .hero img{
+      display: none;
+    }
+}

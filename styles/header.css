@@ -5,17 +5,20 @@ header {
   background-color: #FDFFA0;
   width: 100%;
   max-width: 1280px;
+  position: relative;
 }
 
-.sub-menu{
-    padding: 1rem;
-    background: white;
+.burger-menu {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
 }
 
-.logo img {
-  height: 2.5rem;
-  margin-right: 8rem; /* 20px = 1.25rem */
-  border-radius: 0;
+nav {
+  display: flex;
 }
 
 nav ul {
@@ -26,7 +29,7 @@ nav ul {
 }
 
 nav > ul > li {
-  margin-right: 3rem; /* 20px = 1.25rem */
+  margin-right: 3rem;
   font-weight: 500;
 }
 
@@ -42,6 +45,61 @@ nav ul li:hover ul {
   display: block;
 }
 
+.sub-menu {
+  padding: 1rem;
+  background: white;
+}
+
+.logo img {
+  height: 2.5rem;
+  margin-right: 8rem;
+  border-radius: 0;
+}
+
 .title {
   margin-left: auto;
+}
+
+/* Styles for mobile */
+@media (max-width: 768px) {
+  header{
+    padding: 1.5rem;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .logo img{
+    margin-right: 1rem;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #FDFFA0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: white;
+  }
+
+  nav > ul > li {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  nav ul li ul {
+    position: static;
+  }
 }

@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/[category]/[subcategory]": "pages/[category]/[subcategory].js",
   "/[category]/[subcategory]/[landing]": "pages/[category]/[subcategory]/[landing].js",
+  "/[category]/[subcategory]": "pages/[category]/[subcategory].js",
   "/[category]": "pages/[category].js"
 }

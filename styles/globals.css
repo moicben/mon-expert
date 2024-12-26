@@ -76,3 +76,14 @@ p{
 .colored{
   color: #4552C6;
 }
+
+
+@media (max-width: 1024px) {
+  section {
+    padding: 1.5rem;
+  }
+
+  h1,h2{
+    font-size: 1.5rem;
+  }
+}

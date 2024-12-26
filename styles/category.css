@@ -95,3 +95,22 @@
 .subcategory a:hover {
     text-decoration: underline;
 }
+
+
+@media (max-width: 1024px) {
+  .category {
+    padding: 1.5rem;
+  }
+
+  .description{
+    text-align: center;
+  }
+
+  .listing {
+      grid-template-columns: repeat(2, 1fr); /* 2 éléments par ligne */
+  }
+
+  .landing-pages {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
