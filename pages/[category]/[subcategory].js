@@ -3,20 +3,17 @@ import Head from 'next/head';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import landingData from '../../landing.json';
-import navigation from '../../navigation.json'; // Assuming navigation data is in this file
 
 export default function SubCategory() {
-  const landingPages = landingData.pages || [];
   const router = useRouter();
   const { category, subcategory } = router.query;
 
   // Debugging: Log the landingPages data
   console.log('category:', category);
   console.log('subcategory:', subcategory);
-  console.log('landingPages:', landingPages);
-  
-  // Filter landing pages by category "démarches"
-  const filteredLandingPages = landingPages.filter(page => page.category === 'démarches' && page.subcategory === 'juridique');
+
+  // Filter landing pages by category and subcategory
+  const filteredLandingPages = landingData.pages.filter(page => page.category === category && page.subCategory === subcategory);
   console.log('filteredLandingPages:', filteredLandingPages);
 
   return (
@@ -32,45 +29,17 @@ export default function SubCategory() {
         <p className="description">
           Contenu pour la sous-catégorie {subcategory} dans la catégorie {category}.
         </p>
-        {filteredLandingPages.length > 0 ? (
-          <ul className='listing'>
-            {filteredLandingPages.map(page => (
-              <li key={page.slug}>
-                <a href={`/${category}/${subcategory}/${page.slug}`}>
-                  {page.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>Pas de données</p>
-        )}
+        <div className="landing-pages">
+          {filteredLandingPages.map(page => (
+            <div key={page.slug} className="landing-page">
+              <h2>{page.title}</h2>
+              <p>{page.description}</p>
+              <a href={`/${category}/${subcategory}/${page.slug}`}>En savoir plus</a>
+            </div>
+          ))}
+        </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
-}
-
-export async function getStaticPaths() {
-  const paths = [];
-
-  Object.keys(navigation).forEach(category => {
-    const subcategories = navigation[category];
-    subcategories.forEach(subcategory => {
-      paths.push({
-        params: { category: category.toLowerCase(), subcategory: subcategory.toLowerCase() }
-      });
-    });
-  });
-
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params }) {
-  const { category, subcategory } = params;
-  const formattedCategory = category.charAt(0).toUpperCase() + category.slice(1);
-  const formattedSubcategory = subcategory.charAt(0).toUpperCase() + subcategory.slice(1);
-  const subcategories = navigation[formattedCategory] || [];
-
-  return { props: { subcategories } };
 }

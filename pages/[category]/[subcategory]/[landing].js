@@ -4,8 +4,6 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import landingData from '../../../landing.json';
 
-
-
 export default function LandingPage({ content, category, subcategory }) {
   return (
     <div className="container">
@@ -18,7 +16,7 @@ export default function LandingPage({ content, category, subcategory }) {
       </Head>
       <Header/>
       <main>
-        <section className="hero">
+        <section className="hero full-width">
           <div className='left' >
             <h1>{ content.title }</h1>
             <p>{ content.description }</p>
@@ -30,7 +28,7 @@ export default function LandingPage({ content, category, subcategory }) {
           </div>
         </section>
 
-        <section className="proof">
+        <section className="proof full-width">
           <div className="block">
             <img src="/google.svg" alt="Block 2" />
             <p>4,4/5 sur 11649 avis</p>
@@ -49,7 +47,7 @@ export default function LandingPage({ content, category, subcategory }) {
           <div dangerouslySetInnerHTML={{ __html: content.servicePresentation }} />
         </section>
 
-        <section className="faq">
+        <section className="faq full-width">
           <h2><span className='colored'>Questions fréquentes :</span> {content.longtrain}</h2>
           <div dangerouslySetInnerHTML={{ __html: content.faq }} />
         </section>

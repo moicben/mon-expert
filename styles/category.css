@@ -1,4 +1,4 @@
-.category{
+.category {
     padding: 4rem;
 }
 
@@ -13,18 +13,85 @@
 }
 
 .listing li {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     grid: 2 0 1fr;
 }
 
 .listing li a {
-  text-decoration: none;
-  color: #0070f3;
-  font-weight: bold;
+    text-decoration: none;
+    color: #0070f3;
+    font-weight: bold;
 }
 
 .listing li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+/* New styles for landing pages */
+.landing-pages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.landing-page {
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.landing-page:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.landing-page h2 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.landing-page p {
+    margin: 0 0 1rem;
+    color: #666;
+}
+
+.landing-page a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0070f3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.landing-page a:hover {
+    text-decoration: underline;
+}
+
+/* New styles for subcategories */
+.subcategory {
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.subcategory:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.subcategory a {
+    display: block;
+    color: #0070f3;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.subcategory a:hover {
+    text-decoration: underline;
 }
