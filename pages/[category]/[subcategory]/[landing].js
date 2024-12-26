@@ -12,6 +12,8 @@ export default function LandingPage({ content }) {
     return <div>Loading...</div>;
   }
 
+  console.log('Content:', content);
+
   return (
     <div className="container">
       <Head>
@@ -77,7 +79,7 @@ export async function getStaticPaths() {
       };
     });
 
-  console.log(paths); // Add this line to log the paths
+  console.log('Paths:', paths); // Add this line to log the paths
 
   return {
     paths,
@@ -86,6 +88,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  console.log('Params:', params); // Add this line to log the params
   const { landing } = params;
   const content = landingData.pages.find(page => page.slug === landing);
 
@@ -94,6 +97,8 @@ export async function getStaticProps({ params }) {
       notFound: true,
     };
   }
+
+  console.log('Content found:', content); // Add this line to log the content
 
   return { props: { content } };
 }

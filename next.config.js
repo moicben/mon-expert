@@ -10,8 +10,6 @@ const nextConfig = {
     const landingData = require('./landing.json');
     const paths = {
       ...defaultPathMap,
-      '/[category]/[subcategory]': { page: '/[category]/[subcategory]' },
-      '/[category]/[subcategory]/[landing]': { page: '/[category]/[subcategory]/[landing]' },
     };
 
     // Add paths for each dynamic route
@@ -21,6 +19,8 @@ const nextConfig = {
         query: { category: page.category, subcategory: page.subCategory, landing: page.slug },
       };
     });
+
+    console.log('Paths in exportPathMap:', paths); // Add this line to log the paths
 
     return paths;
   },
