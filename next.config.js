@@ -20,7 +20,7 @@ const nextConfig = {
       };
     });
 
-    console.log('Paths in exportPathMap:', paths); // Add this line to log the paths
+    //sconsole.log('Paths in exportPathMap:', paths); // Add this line to log the paths
 
     return paths;
   },
