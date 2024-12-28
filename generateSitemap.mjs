@@ -40,6 +40,19 @@ function getNavigationUrls() {
   }
 }
 
+// Function to get annuaire data
+function getAnnuaireData() {
+  try {
+    const filePath = path.join(__dirname, 'annuaire.json');
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const annuaireData = JSON.parse(fileContent);
+    return annuaireData;
+  } catch (error) {
+    console.error('Error loading annuaire data:', error);
+    return [];
+  }
+}
+
 async function generateSitemap() {
   const hostname = 'https://mon-expert.online'; // Replace with your actual hostname
   const sitemap = new SitemapStream({ hostname });
@@ -54,7 +67,11 @@ async function generateSitemap() {
   navigationUrls.forEach(({ category, subcategories }) => {
     sitemap.write({ url: `/${category.toLowerCase()}`, changefreq: 'weekly', priority: 0.8 });
     subcategories.forEach(subcategory => {
-      sitemap.write({ url: `/${category.toLowerCase()}/${subcategory.toLowerCase().replace(/ /g, '-')}`, changefreq: 'weekly', priority: 0.7 });
+      if (subcategory.slug) {
+        sitemap.write({ url: `/${category.toLowerCase()}/${subcategory.slug}`, changefreq: 'weekly', priority: 0.7 });
+      } else {
+        console.warn(`Skipping subcategory: ${JSON.stringify(subcategory)} as it does not have a slug.`);
+      }
     });
   });
 
@@ -64,6 +81,18 @@ async function generateSitemap() {
   // Add landing pages
   landings.forEach(page => {
     sitemap.write({ url: `/${page.category.toLowerCase()}/${page.subCategory.toLowerCase().replace(/ /g, '-')}/${page.slug}`, changefreq: 'weekly', priority: 0.6 });
+  });
+
+  // Read annuaire data
+  const annuaireData = getAnnuaireData();
+
+  // Add annuaire pages
+  annuaireData.forEach(city => {
+    city.experts.forEach(expert => {
+      if (city.slug && expert.slug) {
+        sitemap.write({ url: `/annuaire/${city.slug}/${expert.slug}`, changefreq: 'weekly', priority: 0.6 });
+      }
+    });
   });
 
   sitemap.end();
