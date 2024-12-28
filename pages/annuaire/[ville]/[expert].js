@@ -1,37 +1,16 @@
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import Head from 'next/head';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import annuaire from '../../../annuaire.json';
 
-export default function Expert() {
+export default function Expert({ cityData, expertData, profiles }) {
   const router = useRouter();
   const { ville, expert } = router.query;
 
-  useEffect(() => {
-    console.log('Ville:', ville);
-    console.log('Expert:', expert);
-
-    const cityData = annuaire.find(city => city.slug === ville);
-    console.log('City Data:', cityData);
-
-    const expertData = cityData ? cityData.experts.find(exp => exp.slug === expert) : null;
-    console.log('Expert Data:', expertData);
-
-    const profiles = expertData && expertData.profiles ? expertData.profiles : [];
-    console.log('Profiles:', profiles);
-  }, [ville, expert]);
-
-  const cityData = annuaire.find(city => city.slug === ville);
-  const expertData = cityData ? cityData.experts.find(exp => exp.slug === expert) : null;
-  const profiles = expertData && expertData.profiles ? expertData.profiles : [];
-
-  console.log('Ville:', ville);
-  console.log('Expert:', expert);
-  console.log('City Data:', cityData);
-  console.log('Expert Data:', expertData);
-  console.log('Profiles:', profiles);
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="container">
@@ -64,18 +43,27 @@ export default function Expert() {
 }
 
 export async function getStaticPaths() {
-  const paths = annuaire.map(city => ({
-    params: { ville: city.slug, expert: city.experts.map(exp => exp.slug) }
-  })).flat();
+  const paths = annuaire.flatMap(city =>
+    city.experts
+      .filter(expert => city.slug && expert.slug) // Vérifiez que city.slug et expert.slug existent
+      .map(expert => ({
+        params: { ville: city.slug, expert: expert.slug }
+      }))
+  );
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const { ville, expert } = params;
-  const cityData = annuaire.find(city => city.slug === ville);
-  const expertData = cityData ? cityData.experts.find(exp => exp.slug === expert) : null;
+  const cityData = annuaire.find(city => city.slug === params.ville);
+  const expertData = cityData ? cityData.experts.find(exp => exp.slug === params.expert) : null;
   const profiles = expertData && expertData.profiles ? expertData.profiles : [];
 
-  return { props: { profiles, ville, expert } };
+  return {
+    props: {
+      cityData,
+      expertData,
+      profiles
+    }
+  };
 }

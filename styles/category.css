@@ -58,6 +58,7 @@
 .sub-category p {
     margin: 0 0 1rem;
     color: #666;
+    overflow: hidden;
 }
 
 .sub-category span {

@@ -1,8 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/annuaire/[ville]": "pages/annuaire/[ville].js",
-  "/[category]/[subcategory]": "pages/[category]/[subcategory].js",
-  "/annuaire/[ville]/[expert]": "pages/annuaire/[ville]/[expert].js"
-}
+{"/_error":"pages/_error.js","/_app":"pages/_app.js","/annuaire":"pages/annuaire.html","/":"pages/index.html","/[category]":"pages/[category].js","/annuaire/[ville]":"pages/annuaire/[ville].js","/[category]/[subcategory]":"pages/[category]/[subcategory].js","/annuaire/[ville]/[expert]":"pages/annuaire/[ville]/[expert].js","/[category]/[subcategory]/[landing]":"pages/[category]/[subcategory]/[landing].js","/_document":"pages/_document.js","/404":"pages/404.html"}
