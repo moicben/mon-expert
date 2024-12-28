@@ -62,3 +62,20 @@ export default function Expert() {
     </div>
   );
 }
+
+export async function getStaticPaths() {
+  const paths = annuaire.map(city => ({
+    params: { ville: city.slug, expert: city.experts.map(exp => exp.slug) }
+  })).flat();
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const { ville, expert } = params;
+  const cityData = annuaire.find(city => city.slug === ville);
+  const expertData = cityData ? cityData.experts.find(exp => exp.slug === expert) : null;
+  const profiles = expertData && expertData.profiles ? expertData.profiles : [];
+
+  return { props: { profiles, ville, expert } };
+}
