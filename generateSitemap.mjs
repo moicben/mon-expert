@@ -97,7 +97,7 @@ async function generateSitemap() {
 
   sitemap.end();
 
-  const sitemapPath = resolve('public/sitemap.xml');
+  const sitemapPath = resolve('out/sitemap.xml');
   const writeStream = createWriteStream(sitemapPath);
 
   sitemap.pipe(writeStream).on('finish', () => {
