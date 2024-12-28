@@ -4,30 +4,39 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import landingData from '../../landing.json';
 
-export default function SubCategory({ filteredLandingPages }) {
+export default function SubCategory({ filteredLandingPages, categoryTitle, subCategoryTitle }) {
   const router = useRouter();
   const { category, subcategory } = router.query;
 
   return (
     <div className="container">
       <Head>
-        <title>{subcategory} - {category} | Mon Expert</title>
-        <meta name="description" content={`Découvrez des informations et des ressources sur ${subcategory} dans la catégorie ${category}.`} />
-        <meta name="keywords" content={`${subcategory}, ${category}, démarches, juridique`} />
+        <title>{categoryTitle} {subCategoryTitle} - Mon Expert</title>
+        <meta name="description" content={`Découvrez des informations complètes et des ressources utiles sur ${subCategoryTitle} dans la catégorie ${categoryTitle}.`} />
+        <meta name="keywords" content={`${subCategoryTitle}, ${categoryTitle}, démarches, juridique, conseils, informations`} />
+        <meta property="og:title" content={`${categoryTitle} ${subCategoryTitle} - Mon Expert`} />
+        <meta property="og:description" content={`Découvrez des informations complètes et des ressources utiles sur ${subCategoryTitle} dans la catégorie ${categoryTitle}.`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://www.monexpert.com/${category}/${subcategory}`} />
+        <meta property="og:image" content="/path/to/image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${categoryTitle} ${subCategoryTitle} - Mon Expert`} />
+        <meta name="twitter:description" content={`Découvrez des informations complètes et des ressources utiles sur ${subCategoryTitle} dans la catégorie ${categoryTitle}.`} />
+        <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
-      <Header/>
+      <Header />
       <main className='category'>
-        <h1>{subcategory} - {category}</h1>
+        <h1>{categoryTitle} {subCategoryTitle}</h1>
         <p className="description">
-          Contenu pour la sous-catégorie {subcategory} dans la catégorie {category}.
+          Explorez notre contenu détaillé pour la sous-catégorie {subCategoryTitle} dans la catégorie {categoryTitle}. Trouvez des conseils, des démarches et des informations juridiques pour vous aider.
         </p>
-        <div className="landing-pages">
+        <div className="sub-categories">
           {filteredLandingPages.map(page => (
-            <div key={page.slug} className="landing-page">
+            <a key={page.slug} className="sub-category" href={`/${category}/${subcategory}/${page.slug}`}>
               <h2>{page.title}</h2>
               <p>{page.description}</p>
-              <a href={`/${category}/${subcategory}/${page.slug}`}>En savoir plus</a>
-            </div>
+              <span>En savoir plus</span>
+            </a>
           ))}
         </div>
       </main>
@@ -47,6 +56,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { category, subcategory } = params;
   const filteredLandingPages = landingData.pages.filter(page => page.category.toLowerCase() === category && page.subCategory.toLowerCase() === subcategory);
+  const categoryTitle = filteredLandingPages.length > 0 ? filteredLandingPages[0].categoryTitle : '';
+  const subCategoryTitle = filteredLandingPages.length > 0 ? filteredLandingPages[0].subCategoryTitle : '';
 
-  return { props: { filteredLandingPages } };
+  return { props: { filteredLandingPages, categoryTitle, subCategoryTitle } };
 }

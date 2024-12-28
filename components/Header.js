@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import navigation from '../navigation.json';
+import annuaire from '../annuaire.json';
 
 export default function Header({ title }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +11,9 @@ export default function Header({ title }) {
 
   return (
     <header>
-      <div className="logo">
+      <a className="logo" href='/'>
         <img src="/mon-expert.png" alt="Logo" />
-      </div>
+      </a>
       <button className="burger-menu" onClick={toggleMenu}>
         ☰
       </button>
@@ -22,16 +23,28 @@ export default function Header({ title }) {
             <li key={category}>
               <a href={`/${category.toLowerCase()}`}>{category}</a>
               <ul className='sub-menu'>
-                {navigation[category].map((item) => (
-                  <li key={item}>
-                    <a href={`/${category.toLowerCase()}/${item.toLowerCase().replace(/ /g, '-')}`}>
-                      {item}
+                {navigation[category].map((subcategory) => (
+                  <li key={subcategory.slug}>
+                    <a href={`/${category.toLowerCase()}/${subcategory.slug}`}>
+                      {subcategory.name}
                     </a>
                   </li>
                 ))}
               </ul>
             </li>
           ))}
+          <li>
+            <a href='/annuaire'>Annuaire</a>
+            <ul className='sub-menu'>
+              {annuaire.map((city) => (
+                <li key={city.slug}>
+                  <a href={`/annuaire/${city.slug}`}>
+                    {city.ville}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>

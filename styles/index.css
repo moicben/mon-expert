@@ -1,0 +1,65 @@
+
+
+.categoryGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  gap: 20px;
+}
+
+.categoryCard {
+  padding: 2rem;
+  border-radius: 8px;
+  border: solid 1px #ccc;
+}
+
+.categoryLink {
+  text-decoration: none;
+  color: #0070f3;
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.categoryLink:hover {
+  text-decoration: underline;
+}
+
+.subcategoryList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.subcategoryItem {
+  margin-bottom: 5px;
+}
+
+.subcategoryLink {
+  text-decoration: none;
+  color: #555;
+}
+
+.subcategoryLink:hover {
+  text-decoration: underline;
+}
+
+.section {
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.sectionContent {
+  font-size: 1.1em;
+}
+
+.serviceList {
+  margin-top: 10px;
+}
+
+.serviceItem {
+  margin-bottom: 5px;
+}

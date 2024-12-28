@@ -1,4 +1,4 @@
-.category {
+.category{
     padding: 4rem;
 }
 
@@ -19,47 +19,48 @@
     grid: 2 0 1fr;
 }
 
-.listing li a {
+.listing a {
     text-decoration: none;
     color: #0070f3;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.listing li a:hover {
+.listing a:hover {
     text-decoration: underline;
 }
 
 /* New styles for landing pages */
-.landing-pages {
+.sub-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.landing-page {
+.sub-category {
     border: 1px solid #eaeaea;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 1.5rem;
     transition: box-shadow 0.3s ease;
 }
 
-.landing-page:hover {
+.sub-category:hover {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
-.landing-page h2 {
+.sub-category h2,
+.sub-category h3 {
     margin: 0 0 1rem;
     font-size: 1.5rem;
     color: #333;
 }
 
-.landing-page p {
+.sub-category p {
     margin: 0 0 1rem;
     color: #666;
 }
 
-.landing-page a {
+.sub-category span {
     display: inline-block;
     margin-top: 1rem;
     color: #0070f3;
@@ -67,7 +68,7 @@
     font-weight: bold;
 }
 
-.landing-page a:hover {
+.sub-category a:hover {
     text-decoration: underline;
 }
 
@@ -80,21 +81,7 @@
     text-align: center;
 }
 
-.subcategory:hover {
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-}
 
-.subcategory a {
-    display: block;
-    color: #0070f3;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 1rem;
-}
-
-.subcategory a:hover {
-    text-decoration: underline;
-}
 
 
 @media (max-width: 1024px) {
@@ -102,15 +89,11 @@
     padding: 1.5rem;
   }
 
-  .description{
-    text-align: center;
-  }
-
   .listing {
       grid-template-columns: repeat(2, 1fr); /* 2 éléments par ligne */
   }
 
-  .landing-pages {
+  .sub-categories {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }

@@ -1,0 +1,82 @@
+{
+  "expert": "Développeur web",
+  "city": "Paris",
+  "profiles": [
+    {
+      "name": "Agence Web Paris | 6LAB",
+      "address": "N/A",
+      "phone": "+33 1 53 05 56 11"
+    },
+    {
+      "name": "Codsense",
+      "address": "N/A",
+      "phone": "+33 6 87 19 45 09"
+    },
+    {
+      "name": "Valentin Vasiu | Freelance | Développeur Web | Wordpress",
+      "address": "N/A",
+      "phone": "+33 6 50 70 06 65"
+    },
+    {
+      "name": "Uniflow Paris - Agence Web",
+      "address": "N/A",
+      "phone": "+33 1 59 06 37 10"
+    },
+    {
+      "name": "DOV Webmaster France | Expert Référencement SEO",
+      "address": "N/A",
+      "phone": "+33 1 83 80 50 27"
+    },
+    {
+      "name": "Mayasquad - Agence de développement d'applications",
+      "address": "N/A",
+      "phone": "+33 9 70 17 51 50"
+    },
+    {
+      "name": "NetDevices I Agence digital à Paris spécialisée en web, mobile, data et IA",
+      "address": "N/A",
+      "phone": "+33 7 56 87 48 66"
+    }
+  ]
+},
+{
+  "expert": "Designer UX-UI",
+  "city": "Paris",
+  "profiles": [
+    {
+      "name": "Wolfox | Agence de Design UX-UI à Paris | Création de sites Webflow | Accessibilité et Eco-conception",
+      "address": "N/A",
+      "phone": "+33 6 86 76 84 63"
+    },
+    {
+      "name": "The Design Crew",
+      "address": "N/A",
+      "phone": "N/A"
+    },
+    {
+      "name": "use.design : agence design UX/UI, Product, Service, Design Sprint",
+      "address": "N/A",
+      "phone": "+33 1 40 16 18 65"
+    },
+    {
+      "name": "User Studio : agence design de service, design UX / UI, innovation par le design",
+      "address": "N/A",
+      "phone": "+33 1 42 59 47 54"
+    },
+    {
+      "name": "40/60 - Agence Innovation Digitale - UX design & Tech",
+      "address": "N/A",
+      "phone": "+33 6 51 56 56 85"
+    },
+    {
+      "name": "Studio Little Big Design",
+      "address": "N/A",
+      "phone": "+33 6 46 65 67 65"
+    },
+    {
+      "name": "Agence UX/UI",
+      "address": "N/A",
+      "phone": "N/A"
+    }
+  ]
+},

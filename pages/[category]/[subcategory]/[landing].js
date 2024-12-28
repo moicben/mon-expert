@@ -2,7 +2,10 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
+import Hero from '@components/Hero';
+
 import landingData from '../../../landing.json';
+
 
 export default function LandingPage({ content }) {
   const router = useRouter();
@@ -25,19 +28,14 @@ export default function LandingPage({ content }) {
       </Head>
       <Header/>
       <main>
-        <section className="hero full-width">
-          <div className='left' >
-            <h1>{ content.title }</h1>
-            <p>{ content.description }</p>
-            <div dangerouslySetInnerHTML={{ __html: content.advantages }}/>
-            <a className="cta" href="#commencer">Commencer gratuitement</a>
-          </div>
-          <div className='right'>
-            <img src="/expert-francais.webp" alt="Hero" />
-          </div>
-        </section>
+      <Hero
+          title={content.title} 
+          description={content.description} 
+          advantages={content.advantages}
+          cta='Commencer gratuitement'
+        /> 
 
-        <section className="proof full-width">
+        <section className="proof">
           <div className="block">
             <img src="/google.svg" alt="Block 2" />
             <p>4,4/5 sur 11649 avis</p>
@@ -56,7 +54,7 @@ export default function LandingPage({ content }) {
           <div dangerouslySetInnerHTML={{ __html: content.servicePresentation }} />
         </section>
 
-        <section className="faq full-width">
+        <section className="faq">
           <h2><span className='colored'>Questions fréquentes :</span> {content.longtrain}</h2>
           <div dangerouslySetInnerHTML={{ __html: content.faq }} />
         </section>

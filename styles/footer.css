@@ -4,6 +4,7 @@
   padding: 4rem;
   background-color: #ebeff8;
   border-top: solid 1px #ccc;
+  max-width: 1280px;
 }
 
 .column {

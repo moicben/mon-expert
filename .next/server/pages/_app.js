@@ -1,1 +1,117 @@
-(()=>{var r={};r.id=636,r.ids=[636],r.modules={2327:(r,e,t)=>{"use strict";t.r(e),t.d(e,{default:()=>u});var s=t(8732);t(2880),t(4833),t(7329),t(5731),t(1546);let u=function({Component:r,pageProps:e}){return(0,s.jsx)(r,{...e})}},1546:()=>{},5731:()=>{},2880:()=>{},7329:()=>{},4833:()=>{},8732:r=>{"use strict";r.exports=require("react/jsx-runtime")}};var e=require("../webpack-runtime.js");e.C(r);var t=e(e.s=2327);module.exports=t})();
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(() => {
+var exports = {};
+exports.id = "pages/_app";
+exports.ids = ["pages/_app"];
+exports.modules = {
+
+/***/ "./pages/_app.js":
+/*!***********************!*\
+  !*** ./pages/_app.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @styles/globals.css */ \"./styles/globals.css\");\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_globals_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles_landing_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/landing.css */ \"./styles/landing.css\");\n/* harmony import */ var _styles_landing_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_landing_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _styles_header_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/header.css */ \"./styles/header.css\");\n/* harmony import */ var _styles_header_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_header_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _styles_footer_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/footer.css */ \"./styles/footer.css\");\n/* harmony import */ var _styles_footer_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_footer_css__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _styles_category_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/category.css */ \"./styles/category.css\");\n/* harmony import */ var _styles_category_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_category_css__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/index.css */ \"./styles/index.css\");\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var _styles_hero_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/hero.css */ \"./styles/hero.css\");\n/* harmony import */ var _styles_hero_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_hero_css__WEBPACK_IMPORTED_MODULE_7__);\n\n\n\n\n\n\n\n\nfunction Application({ Component, pageProps }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Component, {\n        ...pageProps\n    }, void 0, false, {\n        fileName: \"C:\\\\Users\\\\bendo\\\\Desktop\\\\Documents\\\\Programtic SEO\\\\mon-expert\\\\pages\\\\_app.js\",\n        lineNumber: 10,\n        columnNumber: 10\n    }, this);\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Application);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9fYXBwLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUE0QjtBQUNHO0FBQ0Q7QUFDQTtBQUNFO0FBQ0g7QUFDRjtBQUUzQixTQUFTQSxZQUFZLEVBQUVDLFNBQVMsRUFBRUMsU0FBUyxFQUFFO0lBQzNDLHFCQUFPLDhEQUFDRDtRQUFXLEdBQUdDLFNBQVM7Ozs7OztBQUNqQztBQUVBLGlFQUFlRixXQUFXQSxFQUFBIiwic291cmNlcyI6WyJDOlxcVXNlcnNcXGJlbmRvXFxEZXNrdG9wXFxEb2N1bWVudHNcXFByb2dyYW10aWMgU0VPXFxtb24tZXhwZXJ0XFxwYWdlc1xcX2FwcC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgJ0BzdHlsZXMvZ2xvYmFscy5jc3MnXHJcbmltcG9ydCAnLi4vc3R5bGVzL2xhbmRpbmcuY3NzJztcclxuaW1wb3J0ICcuLi9zdHlsZXMvaGVhZGVyLmNzcyc7XHJcbmltcG9ydCAnLi4vc3R5bGVzL2Zvb3Rlci5jc3MnO1xyXG5pbXBvcnQgJy4uL3N0eWxlcy9jYXRlZ29yeS5jc3MnO1xyXG5pbXBvcnQgJy4uL3N0eWxlcy9pbmRleC5jc3MnO1xyXG5pbXBvcnQgJy4uL3N0eWxlcy9oZXJvLmNzcydcclxuXHJcbmZ1bmN0aW9uIEFwcGxpY2F0aW9uKHsgQ29tcG9uZW50LCBwYWdlUHJvcHMgfSkge1xyXG4gIHJldHVybiA8Q29tcG9uZW50IHsuLi5wYWdlUHJvcHN9IC8+XHJcbn1cclxuXHJcbmV4cG9ydCBkZWZhdWx0IEFwcGxpY2F0aW9uXHJcbiJdLCJuYW1lcyI6WyJBcHBsaWNhdGlvbiIsIkNvbXBvbmVudCIsInBhZ2VQcm9wcyJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/_app.js\n");
+
+/***/ }),
+
+/***/ "./styles/category.css":
+/*!*****************************!*\
+  !*** ./styles/category.css ***!
+  \*****************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/footer.css":
+/*!***************************!*\
+  !*** ./styles/footer.css ***!
+  \***************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/globals.css":
+/*!****************************!*\
+  !*** ./styles/globals.css ***!
+  \****************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/header.css":
+/*!***************************!*\
+  !*** ./styles/header.css ***!
+  \***************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/hero.css":
+/*!*************************!*\
+  !*** ./styles/hero.css ***!
+  \*************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/index.css":
+/*!**************************!*\
+  !*** ./styles/index.css ***!
+  \**************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/landing.css":
+/*!****************************!*\
+  !*** ./styles/landing.css ***!
+  \****************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "react/jsx-dev-runtime":
+/*!****************************************!*\
+  !*** external "react/jsx-dev-runtime" ***!
+  \****************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("react/jsx-dev-runtime");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = (__webpack_exec__("./pages/_app.js"));
+module.exports = __webpack_exports__;
+
+})();
