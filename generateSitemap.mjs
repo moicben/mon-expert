@@ -65,7 +65,7 @@ async function generateSitemap() {
 
   // Add category and subcategory pages
   navigationUrls.forEach(({ category, subcategories }) => {
-    sitemap.write({ url: `/${category.toLowerCase()}`, changefreq: 'weekly', priority: 0.8 });
+    sitemap.write({ url: `/${category.toLowerCase()}`, changefreq: 'weekly', priority: 0.7 });
     subcategories.forEach(subcategory => {
       if (subcategory.slug) {
         sitemap.write({ url: `/${category.toLowerCase()}/${subcategory.slug}`, changefreq: 'weekly', priority: 0.7 });
@@ -80,7 +80,7 @@ async function generateSitemap() {
 
   // Add landing pages
   landings.forEach(page => {
-    sitemap.write({ url: `/${page.category.toLowerCase()}/${page.subCategory.toLowerCase().replace(/ /g, '-')}/${page.slug}`, changefreq: 'weekly', priority: 0.6 });
+    sitemap.write({ url: `/${page.category.toLowerCase()}/${page.subCategory.toLowerCase().replace(/ /g, '-')}/${page.slug}`, changefreq: 'weekly', priority: 0.8 });
   });
 
   // Read annuaire data
